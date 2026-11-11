@@ -30,15 +30,15 @@ Desenvolvedor full-stack júnior em Curitiba e região. Escrevo APIs em Node.js 
 
 **Stack:** TypeScript, Fastify, Drizzle, PostgreSQL, Redis, React, Vite, Vitest e Playwright.
 
-### [Pontual (repositório Agenda)](https://github.com/Felixdario/Agenda): agendamento que não marca duas vezes o mesmo horário
+### [Pontual](https://github.com/Felixdario/Pontual): agendamento que não marca duas vezes o mesmo horário
 
-<img src="https://raw.githubusercontent.com/Felixdario/Agenda/main/docs/screenshots/painel-detalhe.png" width="100%" alt="Painel do Pontual: agenda do dia em colunas por profissional, com o tempo de preparo e limpeza hachurado, e o detalhe de um atendimento">
+<img src="https://raw.githubusercontent.com/Felixdario/Pontual/main/docs/screenshots/painel-detalhe.png" width="100%" alt="Painel do Pontual: agenda do dia em colunas por profissional, com o tempo de preparo e limpeza hachurado, e o detalhe de um atendimento">
 
 **O problema:** barbearias, salões e clínicas precisam de reserva online sem conflito de horário, mesmo quando dois clientes confirmam ao mesmo tempo.
 
-- Restrição `EXCLUDE USING gist` no PostgreSQL como última barreira contra sobreposição ([migração](https://github.com/Felixdario/Agenda/blob/main/apps/api/prisma/migrations/20261108194040_exclusao_agendamentos/migration.sql#L5-L12)).
-- 20 pedidos simultâneos para o mesmo horário resultam em 1 reserva e 19 recusas por horário indisponível (409 na API), em 10 rodadas ([teste](https://github.com/Felixdario/Agenda/blob/main/apps/api/test/integracao/concorrencia.test.ts#L23-L44)).
-- Motor de disponibilidade sem dependência de framework, testado com propriedades (fast-check) ([teste](https://github.com/Felixdario/Agenda/blob/main/apps/api/src/domain/propriedades.test.ts#L170-L193)); 24 regras de negócio rastreadas até os testes ([regras](https://github.com/Felixdario/Agenda/blob/main/docs/regras-de-negocio.md), [decisões](https://github.com/Felixdario/Agenda/blob/main/docs/decisoes.md)).
+- Restrição `EXCLUDE USING gist` no PostgreSQL como última barreira contra sobreposição ([migração](https://github.com/Felixdario/Pontual/blob/main/apps/api/prisma/migrations/20261108194040_exclusao_agendamentos/migration.sql#L5-L12)).
+- 20 pedidos simultâneos para o mesmo horário resultam em 1 reserva e 19 recusas por horário indisponível (409 na API), em 10 rodadas ([teste](https://github.com/Felixdario/Pontual/blob/main/apps/api/test/integracao/concorrencia.test.ts#L23-L44)).
+- Motor de disponibilidade sem dependência de framework, testado com propriedades (fast-check) ([teste](https://github.com/Felixdario/Pontual/blob/main/apps/api/src/domain/propriedades.test.ts#L170-L193)); 24 regras de negócio rastreadas até os testes ([regras](https://github.com/Felixdario/Pontual/blob/main/docs/regras-de-negocio.md), [decisões](https://github.com/Felixdario/Pontual/blob/main/docs/decisoes.md)).
 
 **Stack:** TypeScript, NestJS, Prisma, PostgreSQL, Next.js, React, Tailwind CSS, Vitest e Playwright.
 
@@ -70,12 +70,12 @@ Desenvolvedor full-stack júnior em Curitiba e região. Escrevo APIs em Node.js 
 
 | Área | O que uso | Onde ver |
 | - | - | - |
-| Back-end | Node.js, TypeScript, Fastify, NestJS, Python (Starlette), REST com OpenAPI, Redis Streams | [Pulo](https://github.com/Felixdario/Pulo), [Pontual](https://github.com/Felixdario/Agenda), [Sobra](https://github.com/Felixdario/Sobra), [prospecta](https://github.com/Felixdario/prospecta/tree/main/prospecta/tests) |
-| Front-end | React, Next.js, Vite, TanStack Query, Tailwind CSS, acessibilidade testada com axe | [Pontual](https://github.com/Felixdario/Agenda), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra), [Oceanic.ui](https://github.com/Felixdario/Oceanic.ui) |
+| Back-end | Node.js, TypeScript, Fastify, NestJS, Python (Starlette), REST com OpenAPI, Redis Streams | [Pulo](https://github.com/Felixdario/Pulo), [Pontual](https://github.com/Felixdario/Pontual), [Sobra](https://github.com/Felixdario/Sobra), [prospecta](https://github.com/Felixdario/prospecta/tree/main/prospecta/tests) |
+| Front-end | React, Next.js, Vite, TanStack Query, Tailwind CSS, acessibilidade testada com axe | [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra), [Oceanic.ui](https://github.com/Felixdario/Oceanic.ui) |
 | Mobile | React Native, Expo | [Sobra](https://github.com/Felixdario/Sobra), [SportLink mobile](https://github.com/Felixdario/sportlink-mobile) |
-| Banco de dados | PostgreSQL, Prisma, Drizzle, Redis, SQLite | [Pontual](https://github.com/Felixdario/Agenda), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
-| Qualidade | Vitest, Playwright, fast-check, Testing Library, Jest | [Pontual](https://github.com/Felixdario/Agenda), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
-| DevOps | GitHub Actions, Docker Compose, Vercel | Actions: [Pontual](https://github.com/Felixdario/Agenda/blob/main/.github/workflows/ci.yml), [Sobra](https://github.com/Felixdario/Sobra/blob/main/.github/workflows/ci.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/.github/workflows/ci.yml) · Compose: [Pontual](https://github.com/Felixdario/Agenda/blob/main/docker-compose.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/docker-compose.yml) · Vercel: [SportLink web](https://github.com/Felixdario/sportlink-webapp) |
+| Banco de dados | PostgreSQL, Prisma, Drizzle, Redis, SQLite | [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
+| Qualidade | Vitest, Playwright, fast-check, Testing Library, Jest | [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
+| DevOps | GitHub Actions, Docker Compose, Vercel | Actions: [Pontual](https://github.com/Felixdario/Pontual/blob/main/.github/workflows/ci.yml), [Sobra](https://github.com/Felixdario/Sobra/blob/main/.github/workflows/ci.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/.github/workflows/ci.yml) · Compose: [Pontual](https://github.com/Felixdario/Pontual/blob/main/docker-compose.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/docker-compose.yml) · Vercel: [SportLink web](https://github.com/Felixdario/sportlink-webapp) |
 
 ## Experiência
 
@@ -130,11 +130,11 @@ Junior full-stack developer in the Curitiba area, Brazil. I write APIs in Node.j
 - With 5 million clicks and a warm cache, per-link queries read aggregates in 0.19 to 0.59 ms, against 28 to 122 ms for `COUNT` on the raw table, measured on a local development machine ([table](https://github.com/Felixdario/Pulo/blob/main/README.md#L173-L178), [ADRs](https://github.com/Felixdario/Pulo/tree/main/docs/adr)).
 - Stack: TypeScript, Fastify, Drizzle, PostgreSQL, Redis, React, Vite, Vitest and Playwright.
 
-**[Pontual (Agenda repository)](https://github.com/Felixdario/Agenda): booking that never double-books a slot.** Online booking for barbershops, salons and clinics, with no conflicts even when two customers confirm at the same time.
+**[Pontual](https://github.com/Felixdario/Pontual): booking that never double-books a slot.** Online booking for barbershops, salons and clinics, with no conflicts even when two customers confirm at the same time.
 
-- PostgreSQL `EXCLUDE USING gist` constraint as the last barrier against overlaps ([migration](https://github.com/Felixdario/Agenda/blob/main/apps/api/prisma/migrations/20261108194040_exclusao_agendamentos/migration.sql#L5-L12)).
-- 20 simultaneous requests for the same slot end in 1 booking and 19 refusals for an unavailable slot (409 in the API), over 10 rounds ([test](https://github.com/Felixdario/Agenda/blob/main/apps/api/test/integracao/concorrencia.test.ts#L23-L44)).
-- Framework-free availability engine with property-based tests (fast-check) ([test](https://github.com/Felixdario/Agenda/blob/main/apps/api/src/domain/propriedades.test.ts#L170-L193)); 24 business rules traced to their tests ([rules](https://github.com/Felixdario/Agenda/blob/main/docs/regras-de-negocio.md), [decisions](https://github.com/Felixdario/Agenda/blob/main/docs/decisoes.md)).
+- PostgreSQL `EXCLUDE USING gist` constraint as the last barrier against overlaps ([migration](https://github.com/Felixdario/Pontual/blob/main/apps/api/prisma/migrations/20261108194040_exclusao_agendamentos/migration.sql#L5-L12)).
+- 20 simultaneous requests for the same slot end in 1 booking and 19 refusals for an unavailable slot (409 in the API), over 10 rounds ([test](https://github.com/Felixdario/Pontual/blob/main/apps/api/test/integracao/concorrencia.test.ts#L23-L44)).
+- Framework-free availability engine with property-based tests (fast-check) ([test](https://github.com/Felixdario/Pontual/blob/main/apps/api/src/domain/propriedades.test.ts#L170-L193)); 24 business rules traced to their tests ([rules](https://github.com/Felixdario/Pontual/blob/main/docs/regras-de-negocio.md), [decisions](https://github.com/Felixdario/Pontual/blob/main/docs/decisoes.md)).
 - Stack: TypeScript, NestJS, Prisma, PostgreSQL, Next.js, React, Tailwind CSS, Vitest and Playwright.
 
 **[Sobra](https://github.com/Felixdario/Sobra): personal finance on the web and on the phone.** Log an expense on the phone right away and understand the month on the web dashboard.
@@ -151,12 +151,12 @@ Junior full-stack developer in the Curitiba area, Brazil. I write APIs in Node.j
 
 | Area | What I use | Where to see it |
 | - | - | - |
-| Back end | Node.js, TypeScript, Fastify, NestJS, Python (Starlette), REST with OpenAPI, Redis Streams | [Pulo](https://github.com/Felixdario/Pulo), [Pontual](https://github.com/Felixdario/Agenda), [Sobra](https://github.com/Felixdario/Sobra), [prospecta](https://github.com/Felixdario/prospecta/tree/main/prospecta/tests) |
-| Front end | React, Next.js, Vite, TanStack Query, Tailwind CSS, accessibility tested with axe | [Pontual](https://github.com/Felixdario/Agenda), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra), [Oceanic.ui](https://github.com/Felixdario/Oceanic.ui) |
+| Back end | Node.js, TypeScript, Fastify, NestJS, Python (Starlette), REST with OpenAPI, Redis Streams | [Pulo](https://github.com/Felixdario/Pulo), [Pontual](https://github.com/Felixdario/Pontual), [Sobra](https://github.com/Felixdario/Sobra), [prospecta](https://github.com/Felixdario/prospecta/tree/main/prospecta/tests) |
+| Front end | React, Next.js, Vite, TanStack Query, Tailwind CSS, accessibility tested with axe | [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra), [Oceanic.ui](https://github.com/Felixdario/Oceanic.ui) |
 | Mobile | React Native, Expo | [Sobra](https://github.com/Felixdario/Sobra), [SportLink mobile](https://github.com/Felixdario/sportlink-mobile) |
-| Databases | PostgreSQL, Prisma, Drizzle, Redis, SQLite | [Pontual](https://github.com/Felixdario/Agenda), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
-| Quality | Vitest, Playwright, fast-check, Testing Library, Jest | [Pontual](https://github.com/Felixdario/Agenda), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
-| DevOps | GitHub Actions, Docker Compose, Vercel | Actions: [Pontual](https://github.com/Felixdario/Agenda/blob/main/.github/workflows/ci.yml), [Sobra](https://github.com/Felixdario/Sobra/blob/main/.github/workflows/ci.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/.github/workflows/ci.yml) · Compose: [Pontual](https://github.com/Felixdario/Agenda/blob/main/docker-compose.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/docker-compose.yml) · Vercel: [SportLink web](https://github.com/Felixdario/sportlink-webapp) |
+| Databases | PostgreSQL, Prisma, Drizzle, Redis, SQLite | [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
+| Quality | Vitest, Playwright, fast-check, Testing Library, Jest | [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
+| DevOps | GitHub Actions, Docker Compose, Vercel | Actions: [Pontual](https://github.com/Felixdario/Pontual/blob/main/.github/workflows/ci.yml), [Sobra](https://github.com/Felixdario/Sobra/blob/main/.github/workflows/ci.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/.github/workflows/ci.yml) · Compose: [Pontual](https://github.com/Felixdario/Pontual/blob/main/docker-compose.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/docker-compose.yml) · Vercel: [SportLink web](https://github.com/Felixdario/sportlink-webapp) |
 
 ### Experience
 
