@@ -5,7 +5,7 @@
 
 # Eduardo Felix
 
-Desenvolvedor full-stack júnior em Curitiba e região. Escrevo APIs em Node.js e TypeScript, interfaces em React e apps em React Native. Nos três projetos em destaque, as garantias principais têm teste.
+Desenvolvedor full-stack júnior em Curitiba e região. Escrevo APIs em Node.js e TypeScript, interfaces em React e apps em React Native. Nos quatro projetos em destaque, as garantias principais têm teste.
 
 **English:** [read the English version](#english-version).
 
@@ -14,9 +14,22 @@ Desenvolvedor full-stack júnior em Curitiba e região. Escrevo APIs em Node.js 
 - Trabalho como Full-Stack Developer Junior na Epays desde agosto de 2025, numa biblioteca de componentes React com Vite usada em produtos internos.
 - Antes, trabalhei com back-end no BNE, com React Native na Floox e com React, Node.js e internacionalização na LUGARH.
 - Técnico em Informática no IFPR (2022–2025); hoje curso Análise e Desenvolvimento de Sistemas na PUCPR.
-- Construí os três projetos em destaque com agentes de IA sob a minha direção, com as decisões registradas por escrito (ADRs e registros de decisão) e testes que provam o resultado.
+- Construí os quatro projetos em destaque com agentes de IA sob a minha direção, com as decisões registradas por escrito (ADRs e registros de decisão) e testes que provam o resultado.
 
 ## Projetos em destaque
+
+### [Confere](https://github.com/Felixdario/Confere): currículo conferido contra a vaga
+
+<img src="https://raw.githubusercontent.com/Felixdario/Confere/main/docs/capturas/landing-exemplo.png" width="100%" alt="Exemplo do Confere: a lista de requisitos da vaga ao lado do currículo anonimizado, com o carimbo Não consta no requisito GraphQL">
+
+**O problema:** dizer o quanto um currículo atende uma vaga sem que a IA invente competências, seja enganada por texto escondido ou pese nome, gênero e idade.
+
+- A nota é calculada em código, não pela IA: ela só extrai itens, e cada um traz a citação literal do currículo, que o código confere antes de contar ([fórmula](https://github.com/Felixdario/Confere/blob/main/apps/api/src/curriculo_api/analise/nota.py#L85-L105), [ancoragem](https://github.com/Felixdario/Confere/blob/main/apps/api/src/curriculo_api/ancoragem.py#L166)).
+- Os dados pessoais saem antes da leitura, e o mesmo currículo com identidades diferentes vira o mesmo texto ([teste](https://github.com/Felixdario/Confere/blob/main/apps/api/tests/ingestao/test_ingestao_anonimizacao.py#L322)); nos contrafactuais de nome, gênero e idade, a diferença de nota é 0 ([teste](https://github.com/Felixdario/Confere/blob/main/apps/api/tests/test_provedor_regras.py#L155)).
+- Texto oculto no PDF achado desenhando cada página duas vezes, com e sem o texto ([teste contra fundos adulterados](https://github.com/Felixdario/Confere/blob/main/apps/api/tests/ingestao/test_ingestao_ataques_pdf.py#L398-L399)); o detector de instruções para a IA, em 4 idiomas, pega 44 de 46 variantes, com 0 falso positivo em 89 frases legítimas ([evals](https://github.com/Felixdario/Confere/blob/main/docs/evals-regras.md)).
+- Roda sem chave e sem custo, num modo demonstração por regras; o caminho com a API da Anthropic está escrito e testado sem rede, e o README diz o que não foi medido com o modelo ([o que não foi medido](https://github.com/Felixdario/Confere#o-que-não-foi-medido), [ADRs](https://github.com/Felixdario/Confere/tree/main/docs/adr)).
+
+**Stack:** Python, FastAPI, SQLAlchemy, PostgreSQL com pgvector, Redis (arq), Next.js, React, pytest e Playwright.
 
 ### [Pulo](https://github.com/Felixdario/Pulo): encurtador de URLs com analytics
 
@@ -70,12 +83,13 @@ Desenvolvedor full-stack júnior em Curitiba e região. Escrevo APIs em Node.js 
 
 | Área | O que uso | Onde ver |
 | - | - | - |
-| Back-end | Node.js, TypeScript, Fastify, NestJS, Python (Starlette), REST com OpenAPI, Redis Streams | [Pulo](https://github.com/Felixdario/Pulo), [Pontual](https://github.com/Felixdario/Pontual), [Sobra](https://github.com/Felixdario/Sobra), [prospecta](https://github.com/Felixdario/prospecta/tree/main/prospecta/tests) |
+| Back-end | Node.js, TypeScript, Fastify, NestJS, Python (FastAPI, Starlette), REST com OpenAPI, SSE, filas (arq, Redis Streams) | [Confere](https://github.com/Felixdario/Confere), [Pulo](https://github.com/Felixdario/Pulo), [Pontual](https://github.com/Felixdario/Pontual), [Sobra](https://github.com/Felixdario/Sobra), [prospecta](https://github.com/Felixdario/prospecta/tree/main/prospecta/tests) |
 | Front-end | React, Next.js, Vite, TanStack Query, Tailwind CSS, acessibilidade testada com axe | [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra), [Oceanic.ui](https://github.com/Felixdario/Oceanic.ui) |
 | Mobile | React Native, Expo | [Sobra](https://github.com/Felixdario/Sobra), [SportLink mobile](https://github.com/Felixdario/sportlink-mobile) |
-| Banco de dados | PostgreSQL, Prisma, Drizzle, Redis, SQLite | [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
-| Qualidade | Vitest, Playwright, fast-check, Testing Library, Jest | [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
-| DevOps | GitHub Actions, Docker Compose, Vercel | Actions: [Pontual](https://github.com/Felixdario/Pontual/blob/main/.github/workflows/ci.yml), [Sobra](https://github.com/Felixdario/Sobra/blob/main/.github/workflows/ci.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/.github/workflows/ci.yml) · Compose: [Pontual](https://github.com/Felixdario/Pontual/blob/main/docker-compose.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/docker-compose.yml) · Vercel: [SportLink web](https://github.com/Felixdario/sportlink-webapp) |
+| IA aplicada | Evals versionadas, defesa contra prompt injection, anonimização, embeddings locais, saída estruturada da API da Anthropic | [Confere](https://github.com/Felixdario/Confere) |
+| Banco de dados | PostgreSQL (pgvector), Prisma, Drizzle, SQLAlchemy, Redis, SQLite | [Confere](https://github.com/Felixdario/Confere), [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
+| Qualidade | Vitest, pytest, Playwright, fast-check, hypothesis, Testing Library, Jest | [Confere](https://github.com/Felixdario/Confere), [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
+| DevOps | GitHub Actions, Docker Compose, Vercel | Actions: [Pontual](https://github.com/Felixdario/Pontual/blob/main/.github/workflows/ci.yml), [Sobra](https://github.com/Felixdario/Sobra/blob/main/.github/workflows/ci.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/.github/workflows/ci.yml) · Compose: [Confere](https://github.com/Felixdario/Confere/blob/main/docker-compose.yml), [Pontual](https://github.com/Felixdario/Pontual/blob/main/docker-compose.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/docker-compose.yml) · Vercel: [SportLink web](https://github.com/Felixdario/sportlink-webapp) |
 
 ## Experiência
 
@@ -94,7 +108,6 @@ Desenvolvedor full-stack júnior em Curitiba e região. Escrevo APIs em Node.js 
 
 ## No que estou trabalhando agora
 
-- O quarto projeto do portfólio, depois do Sobra, do Pontual e do Pulo.
 - O curso de Análise e Desenvolvimento de Sistemas na PUCPR.
 
 ## Contato
@@ -112,16 +125,24 @@ Desenvolvedor full-stack júnior em Curitiba e região. Escrevo APIs em Node.js 
 
 ### Eduardo Felix
 
-Junior full-stack developer in the Curitiba area, Brazil. I write APIs in Node.js and TypeScript, interfaces in React and apps in React Native. In the three featured projects, the main guarantees have tests.
+Junior full-stack developer in the Curitiba area, Brazil. I write APIs in Node.js and TypeScript, interfaces in React and apps in React Native. In the four featured projects, the main guarantees have tests.
 
 ### About me
 
 - I have worked as a Full-Stack Developer Junior at Epays since August 2025, on a React component library built with Vite and used across internal products.
 - Before that, I worked on the back end at BNE, with React Native at Floox and with React, Node.js and internationalization at LUGARH.
 - Technical course in Information Technology at IFPR (2022–2025); now studying Systems Analysis and Development at PUCPR.
-- I built the three featured projects with AI agents under my direction, with decisions written down (ADRs and decision logs) and tests that prove the result.
+- I built the four featured projects with AI agents under my direction, with decisions written down (ADRs and decision logs) and tests that prove the result.
 
 ### Featured projects
+
+**[Confere](https://github.com/Felixdario/Confere): a résumé checked against the job post.** Scores how well a résumé fits a job without the AI inventing skills, being fooled by hidden text, or weighing name, gender and age.
+
+- The score is computed in code, not by the AI: it only extracts items, each with a verbatim quote from the résumé that code checks before counting it ([formula](https://github.com/Felixdario/Confere/blob/main/apps/api/src/curriculo_api/analise/nota.py#L85-L105), [anchoring](https://github.com/Felixdario/Confere/blob/main/apps/api/src/curriculo_api/ancoragem.py#L166)).
+- Personal data is removed before reading, and the same résumé with different identities becomes the same text ([test](https://github.com/Felixdario/Confere/blob/main/apps/api/tests/ingestao/test_ingestao_anonimizacao.py#L322)); name, gender and age counterfactuals differ by 0 points ([test](https://github.com/Felixdario/Confere/blob/main/apps/api/tests/test_provedor_regras.py#L155)).
+- Hidden PDF text is found by rendering each page twice, with and without its text ([test against tampered backgrounds](https://github.com/Felixdario/Confere/blob/main/apps/api/tests/ingestao/test_ingestao_ataques_pdf.py#L398-L399)); the prompt-injection detector, in 4 languages, catches 44 of 46 variants with 0 false positives on 89 legitimate sentences ([evals](https://github.com/Felixdario/Confere/blob/main/docs/evals-regras.md)).
+- Runs with no key and no cost in a rule-based demo mode; the Anthropic API path is written and tested offline, and the README states what was not measured with the model ([what was not measured](https://github.com/Felixdario/Confere/blob/main/README.en.md#what-was-not-measured), [ADRs](https://github.com/Felixdario/Confere/tree/main/docs/adr)).
+- Stack: Python, FastAPI, SQLAlchemy, PostgreSQL with pgvector, Redis (arq), Next.js, React, pytest and Playwright.
 
 **[Pulo](https://github.com/Felixdario/Pulo): URL shortener with analytics.** Counts each human click once, with bots and WhatsApp previews kept apart, without slowing the redirect down.
 
@@ -151,12 +172,13 @@ Junior full-stack developer in the Curitiba area, Brazil. I write APIs in Node.j
 
 | Area | What I use | Where to see it |
 | - | - | - |
-| Back end | Node.js, TypeScript, Fastify, NestJS, Python (Starlette), REST with OpenAPI, Redis Streams | [Pulo](https://github.com/Felixdario/Pulo), [Pontual](https://github.com/Felixdario/Pontual), [Sobra](https://github.com/Felixdario/Sobra), [prospecta](https://github.com/Felixdario/prospecta/tree/main/prospecta/tests) |
+| Back end | Node.js, TypeScript, Fastify, NestJS, Python (FastAPI, Starlette), REST with OpenAPI, SSE, queues (arq, Redis Streams) | [Confere](https://github.com/Felixdario/Confere), [Pulo](https://github.com/Felixdario/Pulo), [Pontual](https://github.com/Felixdario/Pontual), [Sobra](https://github.com/Felixdario/Sobra), [prospecta](https://github.com/Felixdario/prospecta/tree/main/prospecta/tests) |
 | Front end | React, Next.js, Vite, TanStack Query, Tailwind CSS, accessibility tested with axe | [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra), [Oceanic.ui](https://github.com/Felixdario/Oceanic.ui) |
 | Mobile | React Native, Expo | [Sobra](https://github.com/Felixdario/Sobra), [SportLink mobile](https://github.com/Felixdario/sportlink-mobile) |
-| Databases | PostgreSQL, Prisma, Drizzle, Redis, SQLite | [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
-| Quality | Vitest, Playwright, fast-check, Testing Library, Jest | [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
-| DevOps | GitHub Actions, Docker Compose, Vercel | Actions: [Pontual](https://github.com/Felixdario/Pontual/blob/main/.github/workflows/ci.yml), [Sobra](https://github.com/Felixdario/Sobra/blob/main/.github/workflows/ci.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/.github/workflows/ci.yml) · Compose: [Pontual](https://github.com/Felixdario/Pontual/blob/main/docker-compose.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/docker-compose.yml) · Vercel: [SportLink web](https://github.com/Felixdario/sportlink-webapp) |
+| Applied AI | Versioned evals, prompt-injection defense, anonymization, local embeddings, Anthropic API structured output | [Confere](https://github.com/Felixdario/Confere) |
+| Databases | PostgreSQL (pgvector), Prisma, Drizzle, SQLAlchemy, Redis, SQLite | [Confere](https://github.com/Felixdario/Confere), [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
+| Quality | Vitest, pytest, Playwright, fast-check, hypothesis, Testing Library, Jest | [Confere](https://github.com/Felixdario/Confere), [Pontual](https://github.com/Felixdario/Pontual), [Pulo](https://github.com/Felixdario/Pulo), [Sobra](https://github.com/Felixdario/Sobra) |
+| DevOps | GitHub Actions, Docker Compose, Vercel | Actions: [Pontual](https://github.com/Felixdario/Pontual/blob/main/.github/workflows/ci.yml), [Sobra](https://github.com/Felixdario/Sobra/blob/main/.github/workflows/ci.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/.github/workflows/ci.yml) · Compose: [Confere](https://github.com/Felixdario/Confere/blob/main/docker-compose.yml), [Pontual](https://github.com/Felixdario/Pontual/blob/main/docker-compose.yml), [Pulo](https://github.com/Felixdario/Pulo/blob/main/docker-compose.yml) · Vercel: [SportLink web](https://github.com/Felixdario/sportlink-webapp) |
 
 ### Experience
 
@@ -175,7 +197,6 @@ Junior full-stack developer in the Curitiba area, Brazil. I write APIs in Node.j
 
 ### What I am working on
 
-- The fourth portfolio project, after Sobra, Pontual and Pulo.
 - My Systems Analysis and Development degree at PUCPR.
 
 ### Contact
