@@ -11,7 +11,7 @@ Desenvolvedor full-stack júnior em Curitiba e região. Escrevo APIs em Node.js 
 
 ## Sobre mim
 
-- Trabalho como Full-Stack Developer Junior na Epays desde agosto de 2025, numa biblioteca de componentes React com Vite usada em produtos internos.
+- Trabalho como Full-Stack Developer Junior na Epays desde agosto de 2025: mantenho uma biblioteca de componentes React com Vite usada em produtos internos e contribuo com o Epjota, sistema que gerencia o fluxo de notas fiscais de serviço (NFS-e) e relatórios fiscais entre empresas e prestadores.
 - Antes, trabalhei com back-end no BNE, com React Native na Floox e com React, Node.js e internacionalização na LUGARH.
 - Técnico em Informática no IFPR (2022–2025); hoje curso Análise e Desenvolvimento de Sistemas na PUCPR.
 - Construí os quatro projetos em destaque com agentes de IA sob a minha direção, com as decisões registradas por escrito (ADRs e registros de decisão) e testes que provam o resultado.
@@ -95,7 +95,7 @@ Desenvolvedor full-stack júnior em Curitiba e região. Escrevo APIs em Node.js 
 
 | Período | Cargo | Empresa | Tecnologias |
 | - | - | - | - |
-| ago/2025 – hoje | Full-Stack Developer Junior | Epays | React, TypeScript, Vite, Sass |
+| ago/2025 – hoje | Full-Stack Developer Junior | Epays | React, TypeScript, Vite, Sass, C#, PostgreSQL, Docker, Redis |
 | mai/2025 – ago/2025 | Front-End Developer | Epays | React, TypeScript |
 | fev/2025 – mai/2025 | Front-End Developer | Floox | React Native, TypeScript |
 | dez/2024 – fev/2025 | Front-End Developer | LUGARH | React, Node.js, Material UI, i18n |
@@ -129,7 +129,7 @@ Junior full-stack developer in the Curitiba area, Brazil. I write APIs in Node.j
 
 ### About me
 
-- I have worked as a Full-Stack Developer Junior at Epays since August 2025, on a React component library built with Vite and used across internal products.
+- I have worked as a Full-Stack Developer Junior at Epays since August 2025: I maintain a React component library built with Vite and used across internal products, and contribute to Epjota, a system that manages service invoice (NFS-e) and fiscal report flows between companies and service providers.
 - Before that, I worked on the back end at BNE, with React Native at Floox and with React, Node.js and internationalization at LUGARH.
 - Technical course in Information Technology at IFPR (2022–2025); now studying Systems Analysis and Development at PUCPR.
 - I built the four featured projects with AI agents under my direction, with decisions written down (ADRs and decision logs) and tests that prove the result.
@@ -184,7 +184,7 @@ Junior full-stack developer in the Curitiba area, Brazil. I write APIs in Node.j
 
 | Period | Role | Company | Technologies |
 | - | - | - | - |
-| Aug 2025 – now | Full-Stack Developer Junior | Epays | React, TypeScript, Vite, Sass |
+| Aug 2025 – now | Full-Stack Developer Junior | Epays | React, TypeScript, Vite, Sass, C#, PostgreSQL, Docker, Redis |
 | May 2025 – Aug 2025 | Front-End Developer | Epays | React, TypeScript |
 | Feb 2025 – May 2025 | Front-End Developer | Floox | React Native, TypeScript |
 | Dec 2024 – Feb 2025 | Front-End Developer | LUGARH | React, Node.js, Material UI, i18n |
